@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ========== Link section ========== -->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'home/stylesheet/stylesheet.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'home/pics/main-pics/itc-icon.png' %}">
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    {% block extrastyle %}{% endblock %}
+    <!-- ========== End Link section Section ========== -->
+    
+    {% if title %}
+        <title>IvoTechClub | {{ title }}</title>
+    {% else %}
+        <title>IvoTechClub | Come and see! </title>
+    {% endif %}
+    <script type="text/javascript" src="{% static 'home/my_external_script.js' %}" defer></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a class="nav-logo" href="{% url 'home' %}">Ivo's Tech Club</div>
+        </div>
+        <a href="#" class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>   
+        <div class="navbar-links">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="#">The builder</a>
+                </li>
+                <li>
+                    <a href="{% url 'the_writer' %}">The writer</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <article>
+        {% block content %}{% endblock %}
+    </article>
+    <footer>
+        <div class="footer-container">
+            <div class="title-sitemap">
+                <h3>Sitemap</h3>
+            </div>
+            <div class="content-sitemap">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">The builder</a>
+                    </li>
+                    <li>
+                        <a href="#">The writer</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="title-about">
+                <h3>About</h3>
+            </div>
+            <div class="content-about">
+                <p>
+                    Hi! My name is Ivo Spironello, I'm the developer I've created this site to share my writings and creations. Feel free of writing to me!
+                </p>
+            </div>
+            <div class="title-contact">
+                <h3>Contact</h3>
+            </div>
+            <div class="content-contact">
+                {% block contact %}
+                    {% if submitted %}
+                        <p class="sucess">
+                            You message has been submited succesfully!!😊
+                        </p>
+                    {% else %}
+                        <form action="" method="post" novalidate>
+                            <table>
+                                {{ form.as_table }}
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><input type="submit" value="Submit"></td>
+                                </tr>
+                            </table>
+                            {% csrf_token %}
+                        </form>
+                    {% endif %}
+                    {% endblock contact %}
+                    <div class="foot-contact">
+                        <a href="https://github.com/aphxtwin">
+                            <img src="{% static 'home/pics/main-pics/github.png' %}">
+                        </a>
+                        <a href="https://www.linkedin.com/in/ivo-spironello-04448920b/">
+                            <img src="{% static 'home/pics/main-pics/linkedin.png' %}">
+                        </a>
+                        <img src="{% static 'home/pics/main-pics/twitter.png' %}">
+                    </div>
+            </div>
+            <div class="foot-copyrigth">
+                <div class="copyright-fcontent">
+                    ©Ivo’s Tech Club 2022 All rigths reserved.
+                </div>
+            </div>
+            
+        </div>
+         
+    </footer>
+</body>
+</html>
+
+
+
+
+
