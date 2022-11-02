@@ -62,6 +62,10 @@
     border-bottom: 2px solid rgb(223, 223, 223);
     padding: 10px;
 }
+.secondary-story a {
+    text-decoration: none;
+    color: black;
+}
 .secondary-title{
     font-family: 'signika';
     font-size: 33px;
@@ -71,9 +75,7 @@
     font-family: 'JetBrains Mono';
 }
 
-.other-stories {
-    display: flex; 
-}
+
 
 .h2-other-stories {
     font-family: 'Press Start 2P';
@@ -89,6 +91,10 @@
     margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
+}
+.other-stories a {
+    text-decoration:none;
+    color: black;
 }
 .other-header {
     display: flex;
@@ -142,5 +148,4 @@
     .secondary-story {
         border-bottom:none;
     }
- 
 }

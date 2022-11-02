@@ -11,7 +11,7 @@
 {% block content %}
 
 <div class="hero-text">
-    <h1 id="TWh1">The Writer</h1>
+    <h1 id="TWh1">The Wr</h1>
 </div>
 
 
@@ -35,12 +35,10 @@
         </div>
         <div class="secondary-container">
             {% for post in secondary_stories %}
-            <a class="secondaryurl" href="{{ post.slug }}" class="top-content">
-                <div class="secondary-story">
-                    <div class="secondary-title"> {{post.title}} </div>
-                    <div class="secondary-category"> {{post.category}}</div>
-                </div>
-            </a>
+            <div class="secondary-story">
+                <div class="secondary-title"> {{post.title}} </div>
+                <div class="secondary-category"> {{post.category}}</div>
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -49,17 +47,18 @@
         {% for i in other_stories %}
         <a class="otherurl" href="{{ i.slug }}" class="top-content">
             <div class="other-stories">
-                <div class="other-header">
-                    <div class="other-title">
-                        <h2>{{i.title}}</h2>
+                <a href="{{ post.slug }}">
+                    <div class="other-header">
+                        <div class="other-title">
+                            <h2>{{i.title}}</h2>
+                        </div>
+                        <div class="other-image"><img src="{{i.image.url}}"></div>
                     </div>
-                    <div class="other-image"><img src="{{i.image.url}}"></div>
-                </div>
-                <div class="other-footer">
-                    <div class="other-category">{{i.category}}</div>
-                    <div class="other-date">{{i.date_posted}}</div>
-                </div>    
-
+                    <div class="other-footer">
+                        <div class="other-category">{{i.category}}</div>
+                        <div class="other-date">{{i.date_posted}}</div>
+                    </div>    
+                </a>
             </div>
         </a>    
         {% endfor %}
