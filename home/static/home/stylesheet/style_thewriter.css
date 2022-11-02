@@ -112,11 +112,29 @@
     height: 150px;
     align-self: flex-end;
 }
+.topurl{
+    text-decoration: none;
+    color: black;
+}
+.otherurl {
+    text-decoration: none;
+    color: black;
+}
+.secondaryurl {
+    text-decoration: none;
+    color: black;
+}
+
 
 @media only screen and (min-width: 600px) {
     .content-wrap {
         display:flex;
         flex-direction: row;
+    }
+
+    .secondaryurl {
+        color:black;
+        text-decoration: none;
     }
     .secondary-container {
         margin-top: 0;
@@ -124,4 +142,5 @@
     .secondary-story {
         border-bottom:none;
     }
+ 
 }

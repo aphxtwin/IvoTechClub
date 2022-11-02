@@ -11,16 +11,15 @@
 {% block content %}
 
 <div class="hero-text">
-    <h1 id="TWh1">The Wr</h1>
+    <h1 id="TWh1">The Writer</h1>
 </div>
 
-<div class="category-navigation"></div>
 
 <div class="container">
     <div class="content-wrap">
         {% for post in top_story %}
         <div class="top-story">
-            <a href="{{ post.slug }}" class="top-content">
+            <a class="topurl" href="{{ post.slug }}" class="top-content">
                 <div class="top-title">
                     {{ post.title }}
                 </div>
@@ -36,16 +35,19 @@
         </div>
         <div class="secondary-container">
             {% for post in secondary_stories %}
-            <div class="secondary-story">
-                <div class="secondary-title"> {{post.title}} </div>
-                <div class="secondary-category"> {{post.category}}</div>
-            </div>
+            <a class="secondaryurl" href="{{ post.slug }}" class="top-content">
+                <div class="secondary-story">
+                    <div class="secondary-title"> {{post.title}} </div>
+                    <div class="secondary-category"> {{post.category}}</div>
+                </div>
+            </a>
             {% endfor %}
         </div>
     </div>
     <div class="other-container">
         <h2 class="h2-other-stories"> Other stories</h2>
         {% for i in other_stories %}
+        <a class="otherurl" href="{{ i.slug }}" class="top-content">
             <div class="other-stories">
                 <div class="other-header">
                     <div class="other-title">
@@ -59,6 +61,7 @@
                 </div>    
 
             </div>
+        </a>    
         {% endfor %}
 </div>
 
