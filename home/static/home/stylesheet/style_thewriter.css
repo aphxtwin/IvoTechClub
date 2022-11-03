@@ -130,7 +130,10 @@
     .secondary-story {
         border-bottom:none;
     }
-
+    .topurl {
+        color: black;
+        text-decoration: none;
+    }
 
    
 }   

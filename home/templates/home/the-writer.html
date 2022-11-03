@@ -14,11 +14,12 @@
     <h1 id="TWh1">The Writer</h1>
 </div>
 
+
 <div class="container">
     <div class="content-wrap">
         {% for post in top_story %}
         <div class="top-story">
-            <a href="{{ post.slug }}" class="top-content">
+            <a class="topurl" href="{{ post.slug }}">
                 <div class="top-title">
                     {{ post.title }}
                 </div>
@@ -35,10 +36,8 @@
         <div class="secondary-container">
             {% for post in secondary_stories %}
             <div class="secondary-story">
-                <a href="{{ post.slug }}">
-                    <div class="secondary-title"> {{post.title}} </div>
-                    <div class="secondary-category"> {{post.category}}</div>
-                </a>
+                <div class="secondary-title"> {{post.title}} </div>
+                <div class="secondary-category"> {{post.category}}</div>
             </div>
             {% endfor %}
         </div>
@@ -46,6 +45,7 @@
     <div class="other-container">
         <h2 class="h2-other-stories"> Other stories</h2>
         {% for i in other_stories %}
+        
             <div class="other-stories">
                 <a href="{{ post.slug }}">
                     <div class="other-header">
@@ -60,6 +60,7 @@
                     </div>    
                 </a>
             </div>
+        </a>    
         {% endfor %}
 </div>
 
