@@ -10,12 +10,11 @@
 
 {% block content %}
 
-<div class="hero-text">
-    <h1 id="TWh1">The Writer</h1>
-</div>
-
-
 <div class="container">
+    <div class="hero-text">
+        <h1 id="TWh1">The Writer</h1>
+    </div>
+
     <div class="content-wrap">
         {% for post in top_story %}
         <div class="top-story">
@@ -29,7 +28,7 @@
                 {% else %}
                 <img src="{% static 'home/pics/main-pics/github.png' %}">
                 {% endif %}
-            
+
             </a>
             {% endfor %}
         </div>
@@ -45,14 +44,21 @@
     <div class="other-container">
         <h2 class="h2-other-stories"> Other stories</h2>
         {% for i in other_stories %}
-        
             <div class="other-stories">
                 <a href="{{ post.slug }}">
                     <div class="other-header">
                         <div class="other-title">
                             <h2>{{i.title}}</h2>
                         </div>
-                        <div class="other-image"><img src="{{i.image.url}}"></div>
+                        {% if i.image.url != none %}
+                            <div class="other-image">
+                                <img src="{{i.image.url}}">
+                            </div>
+                        {% else %}
+                            <div class="other-image">
+                                <img src="{% static 'home/pics/main-pics/writer_crop.png' %}">
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="other-footer">
                         <div class="other-category">{{i.category}}</div>
