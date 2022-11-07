@@ -34,10 +34,12 @@
         </div>
         <div class="secondary-container">
             {% for post in secondary_stories %}
-            <div class="secondary-story">
-                <div class="secondary-title"> {{post.title}} </div>
-                <div class="secondary-category"> {{post.category}}</div>
-            </div>
+            <a href="{{post.slug}}" class="secondaryurl">
+                <div class="secondary-story">
+                    <div class="secondary-title"> {{post.title}} </div>
+                    <div class="secondary-category"> {{post.category}}</div>
+                </div>
+            </a>
             {% endfor %}
         </div>
     </div>
@@ -45,7 +47,7 @@
         <h2 class="h2-other-stories"> Other stories</h2>
         {% for i in other_stories %}
             <div class="other-stories">
-                <a href="{{ post.slug }}">
+                <a href="{{ i.slug }}" class="otherurl">
                     <div class="other-header">
                         <div class="other-title">
                             <h2>{{i.title}}</h2>

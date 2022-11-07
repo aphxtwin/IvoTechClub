@@ -78,16 +78,13 @@ article {
     font-size: 24px;
     line-height: 32px;
     color: #000000;
-    transition: all 0.9s;
+    transition: all 0.15s;
 }
 
 @media (hover:hover) {
     .navbar-links li a:hover {
-        border: 3px solid black;
-        border-radius: 5px;
-        background: white;
-        color: black;
-        text-decoration-color:black ;
+        color: violet;
+       
     }
 }
 
@@ -325,7 +322,3 @@ input[type="submit"]:hover {
 }
 /***** End Footer *****/
 
-/***** THE-WRITER SECTION *****/
-    
-
-/***** END-THEWRITER-SECTION *****/
