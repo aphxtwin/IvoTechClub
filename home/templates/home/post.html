@@ -1,15 +1,37 @@
 {% extends "home/base.html" %}
 {% load static %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'home/stylesheet/style-detailedposts.css' %}">
+{% endblock extrastyle %}
 
 {% block content %}
 {% for i in detailed_post %}
-    <h1>
+    <div class="back-to-articles">
+        <a href="{% url 'the_writer' %}">
+            back to articles
+        </a>
+    </div>
+    <div class="detailed-post">
+        <h1>
         {{i.title}}
-    </h1>
-    {% if i.image.url != none %}
-        <img src="{{i.image.url}}" height="150px" width="155px"></img>
-    {% else %}
+        </h1>
+        <div class="authory">
+        Ivo Spironello
+        </div>
+        <div class="main-image">
+        {% if i.image.url != none %}
+        <img src="{{i.image.url}}" height="250px" width="255px"></img>
+        {% else %}
         <img src="{% static 'home/pics/main-pics/writer_crop.png' %}">
-    {% endif%}
+        {% endif%}
+        </div>
+
+        <div class="summary">
+        <p>{{i.summary | safe}} </p>
+        </div>
+        <div class="body">
+        {{i.body | safe}}
+        </div>
+    </div>
 {% endfor %}
 {% endblock content %}

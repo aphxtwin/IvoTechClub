@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'signika';
+    src: url('..\\fonts\\Signika-Bold.ttf');
+}
+
+
+.detailed-post {
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 100%; 
+}
+h1 {
+    font-family: 'signika';
+    font-size: 36px;
+    line-height: 125%;
+    margin: 20px 0 12px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid rgb(217, 217, 217);
+}
+.authory {
+    font-family: 'JetBrains Mono';
+}
+.main-image img {
+    width: 100%;
+    height: auto;
+}
+
+.body img{
+    width: 100%;
+}
