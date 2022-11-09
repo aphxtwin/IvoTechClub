@@ -69,7 +69,7 @@ article {
 
 .navbar-links li a {
     text-decoration: underline #FBFF40;
-
+    
     padding: 1rem;
     display: block;
     font-family: 'JetBrains Mono';
@@ -264,6 +264,9 @@ article {
     position: relative;
     float: right;
     margin-top: 20px;
+}
+.foot-contact a {
+    text-decoration: none;
 }
 .foot-contact img {
     margin-right: 8px;

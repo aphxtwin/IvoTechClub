@@ -23,6 +23,7 @@ class Posts(models.Model):
     project_or_article = models.CharField(max_length = 7, choices = PROART_CHOICES, default = ARTICLE) 
     summary = RichTextField(default = '')
     image = models.ImageField(null=True, blank =True) 
+    image_description = models.CharField(max_length = 255, blank = True)
     date_posted = models.DateTimeField(auto_now_add = True)
     body = RichTextField(default = '')
     slug = models.SlugField(max_length=255, blank=True, null=True)

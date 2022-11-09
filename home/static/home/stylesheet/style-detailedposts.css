@@ -2,12 +2,33 @@
     font-family: 'signika';
     src: url('..\\fonts\\Signika-Bold.ttf');
 }
-
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('..\\fonts\\Noto_Serif\\NotoSerif-Regular.ttf');
+}
 
 .detailed-post {
    padding-left: 15px;
    padding-right: 15px;
    width: 100%; 
+}
+.back-to-articles {
+    display: inline-block;
+    font-family: "JetBrains Mono";
+    margin-top: 15px;
+    background-color:  black;
+    border-radius: 5px;
+    padding: 2px;
+    border: 2px solid black;
+}
+.back-to-articles a {
+    text-decoration: none;
+    color: white; 
+}
+.image-description {
+    color: rgb(52, 52, 52);
+    font-family: "NotoSerif";
+    font-size: 15px;
 }
 h1 {
     font-family: 'signika';
@@ -24,7 +45,40 @@ h1 {
     width: 100%;
     height: auto;
 }
+.summary{
+    border: 2px solid black;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    padding: 20px;
+}
+.summary p {
+    font-size: 20px;
+    font-family: "JetBrains Mono";
+    margin-top: 2%;
+}
 
+.body p {
+    font-family: "NotoSerif";
+    line-height: 26pt;
+}
 .body img{
     width: 100%;
 }
+
+.timetoshare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    flex-direction: column;
+}
+.timetoshare h2 {
+    font-family: 'JetBrains Mono';
+}
+.timetoshare i {
+    margin-right: 15px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 20px;
+}
+

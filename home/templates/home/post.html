@@ -1,17 +1,19 @@
 {% extends "home/base.html" %}
 {% load static %}
+{% load social_share %}
 {% block extrastyle %}
     <link rel="stylesheet" href="{% static 'home/stylesheet/style-detailedposts.css' %}">
 {% endblock extrastyle %}
 
 {% block content %}
 {% for i in detailed_post %}
-    <div class="back-to-articles">
-        <a href="{% url 'the_writer' %}">
-            back to articles
-        </a>
-    </div>
+
     <div class="detailed-post">
+        <span class="back-to-articles">
+            <a href="{% url 'the_writer' %}">
+                &#8592; back to articles
+            </a>
+        </span>
         <h1>
         {{i.title}}
         </h1>
@@ -21,6 +23,9 @@
         <div class="main-image">
         {% if i.image.url != none %}
         <img src="{{i.image.url}}" height="250px" width="255px"></img>
+        <div class="image-description">
+            {{i.image_description}}
+        </div>
         {% else %}
         <img src="{% static 'home/pics/main-pics/writer_crop.png' %}">
         {% endif%}
@@ -31,6 +36,12 @@
         </div>
         <div class="body">
         {{i.body | safe}}
+        </div>
+    </div>
+    <div class="timetoshare">
+        <h2>Share this article</h2>
+        <div class="where-to-share">
+           
         </div>
     </div>
 {% endfor %}
