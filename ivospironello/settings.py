@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'ivospironello.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wfxvlhbb',
-        'HOST' : 'babar.db.elephantsql.com',
-        'USER' : 'wfxvlhbb',
-        'PASSWORD' : '5MLgqn9OW-jlsw04Cwe8T6uc9xlZKLGz',
+        'NAME': 'fnaqtyif',
+        'HOST' : 'heffalump.db.elephantsql.com',
+        'USER' : 'fnaqtyif',
+        'PASSWORD' : 'b2kfSALYcrkUTZcniBoqRPzR2UOORjU5',
         'PORT' : '5432'
     }
 }

@@ -7,6 +7,8 @@ from .models import Categories, Posts
 from .forms import contactForm
 # Create your views here.
 
+
+
 def home(request):
     submitted = False
     if request.method == 'POST':
@@ -18,7 +20,7 @@ def home(request):
         form = contactForm()
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'home/home.html', {'form': form, 'submitted':submitted})
+    return render(request, 'home/home.html', {'form': form, 'submitted':submitted,})
 
 def writer_preview(request):
     post_list = Posts.objects.all()
@@ -62,9 +64,11 @@ def writer_preview(request):
 
 def post_detailed(request, slug):
     detailed_post = Posts.objects.filter(slug = slug)
+
     context = {
         'slug': slug,
-        'detailed_post': detailed_post
+        'detailed_post': detailed_post,
+
     }
     return render(request, 'home/post.html', context)
 
@@ -80,3 +84,6 @@ def about(request):
         if 'submitted' in request.GET:
             submitted = True
     return render(request,'home/about.html', {'form': form, 'submitted':submitted})
+
+def inventions(request):
+    return render(request, 'home/inventions.html')

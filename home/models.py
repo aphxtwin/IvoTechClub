@@ -19,19 +19,27 @@ class Posts(models.Model):
     PROJECT = "PROJECT"
     PROART_CHOICES = [(ARTICLE, "Article"),(PROJECT, "Project")]
 
-    title = models.CharField(max_length=250, null=False, blank=False)
-    project_or_article = models.CharField(max_length = 7, choices = PROART_CHOICES, default = ARTICLE) 
+    title = models.CharField(max_length=250, null=False, blank=False) 
     summary = RichTextField(default = '')
+
     image = models.ImageField(null=True, blank =True) 
     image_description = models.CharField(max_length = 255, blank = True)
     date_posted = models.DateTimeField(auto_now_add = True)
     body = RichTextField(default = '')
     slug = models.SlugField(max_length=255, blank=True, null=True)
     likes = models.IntegerField(default = 0, editable = False,)
-    
     category = models.ForeignKey(Categories, null = True, on_delete = models.PROTECT)
     def __str__(self):
-        return f"{self.project_or_article} | {self.title}" 
+        return self.title
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+class Inventions(models.Model):
+    title = models.CharField(max_length=250, null=False, blank=False)
+    image = models.ImageField(null=True, blank =True)
+    description_of_project = RichTextField(default = '')
+    url = models.CharField(max_length=250, null=False, blank=False, default = 'https://github.com/aphxtwin/')
+    
+    def __str__(self):
+        return self.title 

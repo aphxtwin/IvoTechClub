@@ -1,0 +1,10 @@
+article{
+    background-image: url('..\\pics\\main-pics\\gray-circuits.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.head-inventions{
+    color: white;
+}

@@ -47,6 +47,7 @@ h1 {
 }
 .summary{
     border: 2px solid black;
+    border-radius: 20px;
     margin-bottom: 5%;
     margin-top: 5%;
     padding: 20px;
@@ -65,6 +66,14 @@ h1 {
     width: 100%;
 }
 
+.where-to-share{
+    display: flex;
+    flex-direction: row;
+}
+.where-to-share a {
+    color: black;
+}
+
 .timetoshare {
     display: flex;
     justify-content: center;
@@ -78,7 +87,30 @@ h1 {
 .timetoshare i {
     margin-right: 15px;
     border: 2px solid black;
-    padding: 5px;
-    border-radius: 20px;
+    padding: 8px;
+    border-radius: 25px;
 }
 
+
+@media only screen and (min-width: 800px) {
+
+    h1 {
+        font-size: 50px;
+    }
+    .detailed-post{
+        padding: 0px 100px 1em ;
+    }
+    .main-image {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;        
+    }
+    .main-image img {
+        width: 50%;
+        height: auto;
+    }
+    .summary {
+        margin-bottom: 25px;
+    }
+}

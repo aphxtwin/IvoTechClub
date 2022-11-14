@@ -39,7 +39,7 @@
                     <a href="{% url 'home' %}">Home</a>
                 </li>
                 <li>
-                    <a href="#">Inventions</a>
+                    <a href="{% url 'inventions' %}">Inventions</a>
                 </li>
                 <li>
                     <a href="{% url 'the_writer' %}">Articles</a>
@@ -64,7 +64,7 @@
                         <a href="{% url 'home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="#">Inventions</a>
+                        <a href="{% url 'inventions' %}">Inventions</a>
                     </li>
                     <li>
                         <a href="#">Articles</a>
@@ -106,19 +106,19 @@
                     {% endblock contact %}
                     <div class="foot-contact">
                         <a href="https://github.com/aphxtwin">
-                            <img src="{% static 'home/pics/main-pics/github.png' %}">
+                            <i class="fa-brands fa-github"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/ivo-spironello-04448920b/">
-                            <img src="{% static 'home/pics/main-pics/linkedin.png' %}">
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
-                        <img src="{% static 'home/pics/main-pics/twitter.png' %}">
+                        <i class="fa-brands fa-twitter"></i>
                     </div>
             </div>
             <div class="foot-copyrigth">
                 <div class="copyright-fcontent">
                     ©Ivo’s Tech Club 2022 All rigths reserved.
                 </div>
-            </div>
+            </div>  
             
         </div>
          

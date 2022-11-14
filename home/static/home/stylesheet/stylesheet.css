@@ -16,7 +16,10 @@ body {
     flex-direction: column;   
 }
 
-
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('..\\fonts\\Press_Start_2P\\PressStart2P-Regular.ttf');
+}
 article {
     min-height: 100vh;
 }
@@ -35,7 +38,7 @@ article {
     
 }
 .navbar-brand {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P';
     height: 100px;
     width: 120px;
     margin: 0;
@@ -267,6 +270,7 @@ article {
 }
 .foot-contact a {
     text-decoration: none;
+    color: white;
 }
 .foot-contact img {
     margin-right: 8px;

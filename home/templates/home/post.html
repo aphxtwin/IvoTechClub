@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 {% load static %}
-{% load social_share %}
+
 {% block extrastyle %}
     <link rel="stylesheet" href="{% static 'home/stylesheet/style-detailedposts.css' %}">
 {% endblock extrastyle %}
@@ -18,10 +18,11 @@
         {{i.title}}
         </h1>
         <div class="authory">
-        Ivo Spironello
+        By: Ivo Spironello
         </div>
         <div class="main-image">
         {% if i.image.url != none %}
+        
         <img src="{{i.image.url}}" height="250px" width="255px"></img>
         <div class="image-description">
             {{i.image_description}}
@@ -40,8 +41,11 @@
     </div>
     <div class="timetoshare">
         <h2>Share this article</h2>
-        <div class="where-to-share">
-           
+        <div class="where-to-share">    
+            <a href="#" class="facebook"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="#" class="linkedin"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+            <a href="#" class="twitter"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a href="#" class="whatsapp"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
         </div>
     </div>
 {% endfor %}
