@@ -8,7 +8,45 @@
 {% block content %}
 
 <div class="head-inventions">
-    
+    <div class="title">
+        Check Out my inventions!
+    </div>
 </div>
+<div class="inventions-grid">
+    {% for i in inventions %}
+    <div class="invention-item">
+        <div class="imagen-invention">
+            <img src="{{i.image.url}}" alt="" width="100px" height="150px">
+        </div>
+        <div class="container-content">
+            <div class="title-project">{{ i.title }}</div>
+            <div class="description-techstack">
+                <div class="description">{{i.description_of_project | safe}}</div>
+                <div class="tech-stack">{{i.tech_stack | safe }}</div> 
+            </div>
+        </div>
+
+        <div class="click-to-see">
+            <a href="{{i.url}}">
+                <p>CLICK FOR MORE DETAILS!</p>
+            </a>            
+        </div>
+    </div>
+    {% endfor %}
+    {% if inventions_len == 0 %}
+        <div class="coming-soon">
+            <div class="csimagen-invention">
+                <img src="{% static 'home/pics/main-pics/padlock.svg' %}" alt="">
+            </div>
+            <div class="container-content">
+                <div class="cstitle-project">COMING SOON!</div>
+            </div>
+            <div class="csclick-to-see">
+                <p><i class="fa-solid fa-lock"></i>LOCKED FOR NOW</p>           
+            </div>
+        </div>
+    {% endif %}
+</div>
+
 
 {% endblock content %}

@@ -39,6 +39,7 @@ class Inventions(models.Model):
     title = models.CharField(max_length=250, null=False, blank=False)
     image = models.ImageField(null=True, blank =True)
     description_of_project = RichTextField(default = '')
+    tech_stack = RichTextField(default = '')
     url = models.CharField(max_length=250, null=False, blank=False, default = 'https://github.com/aphxtwin/')
     
     def __str__(self):

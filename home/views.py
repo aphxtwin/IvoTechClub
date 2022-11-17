@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponseRedirect
 
-from .models import Categories, Posts
+from .models import Categories, Posts, Inventions
 
 from .forms import contactForm
 # Create your views here.
@@ -86,4 +86,27 @@ def about(request):
     return render(request,'home/about.html', {'form': form, 'submitted':submitted})
 
 def inventions(request):
-    return render(request, 'home/inventions.html')
+    inventions = Inventions.objects.all()
+    inventions_len = 0
+    
+    if len(inventions) % 2 == 0:
+        inventions_len = 1
+
+    submitted = False
+    if request.method == 'POST':
+        form = contactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            return HttpResponseRedirect('/?submitted=True')
+    else:
+        form = contactForm()
+        if 'submitted' in request.GET:
+            submitted = True
+        
+    context = {
+        "submitted": submitted,
+        "form": form,
+        "inventions": inventions,
+        "inventions_len":inventions_len
+    }
+    return render(request, 'home/inventions.html', context)

@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'signika';
+    src: url('..\\fonts\\Signika-Bold.ttf');
+}
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('..\\fonts\\Noto_Serif\\NotoSerif-Regular.ttf');
+}
 article{
     background-image: url('..\\pics\\main-pics\\gray-circuits.jpg');
     background-repeat: no-repeat;
@@ -6,5 +14,157 @@ article{
 }
 
 .head-inventions{
+    display: flex;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.669);
+    justify-content: center;
+}
+.title{
+    font-family: 'signika';
+    color: white;
+    font-size: 30px;
+}
+.inventions-grid {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.invention-item{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(23, 23, 23)
+}
+.invention-item a {
+    color: white;
+    text-decoration: none;
+}
+.container-content{
+    padding: 15px;
+    height: 100%;
+}
+.imagen-invention img {
+    width: 100%;
+    border-radius: 20px 20px 0 0 ;
+}
+.title-project{
+    font-size: 45px;
+    font-family: 'signika';
     color: white;
 }
+.description-techstack {
+    display: flex;
+    height: 300px;
+    margin-top: 2px;
+    flex-direction: row;
+    color: white;
+}
+.description {
+    font-family: 'NotoSerif';
+    font-size: 22px;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.tech-stack {
+    font-family: 'signika';
+    margin-left: 18px;
+    font-size: 25px;
+}
+.click-to-see {
+    display: flex;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: yellow;
+    font-family: 'signika';
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px 10px 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.click-to-see a {
+    color: black;
+}
+
+.coming-soon{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(23, 23, 23)
+}
+.csclick-to-see {
+    display: flex;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: rgb(70, 70, 70);
+    font-family: 'signika';
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px 10px 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+.cstitle-project{
+    font-size: 80px;
+    padding: 5px;
+    font-family: 'signika';
+    color: white;
+}
+.csimagen-invention {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.csimagen-invention img {
+    width: 50%;
+    height: auto;
+}
+.csclick-to-see a {
+    text-decoration: none;
+    color: white;
+}
+.csimagen-invention {
+    display: flex;
+    flex-direction: column;
+
+}
+.fa-lock {
+    margin-right: 10px;
+}
+@media only screen and (min-width: 800px) {
+    article{
+        position: relative;
+    }
+    .inventions-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 30px;
+        align-content: space-between;
+    }
+    .invention-item {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        height: auto;
+    }
+    .description {
+        font-size: 25px;
+    }
+    .tech-stack {
+        font-size: 30px;
+    }
+    .coming-soon {
+        width: 48%;
+    }
+}
+
+
